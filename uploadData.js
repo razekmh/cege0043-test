@@ -20,6 +20,7 @@ function startDataUpload() {
 	var surname = document.getElementById("surname").value;
 	var module = document.getElementById("module").value;
 	var postString = "name="+name +"&surname="+surname+"&module="+module;
+	
 	// now get the checkbox values - separate them with a | so that they can be
 	// split later on if necessary
 	var checkString = "";
@@ -40,6 +41,11 @@ function startDataUpload() {
 	// now get the select box values
 	var language = document.getElementById("languageselectbox").value;
 	postString = postString + "&language="+language;
+
+	// now get the geometry values
+	var latitude = document.getElementById("latitude").value;
+	var longitude = document.getElementById("longitude").value;
+	postString = postString + "&latitude=" + latitude + "&longitude=" +longitude;
 	alert (postString);
 	processData(postString);
 }
